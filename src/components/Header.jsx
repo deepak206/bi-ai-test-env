@@ -2,8 +2,13 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="bg-blue-500 text-white p-4">
-      <h1 className="text-2xl">My React App</h1>
+    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 20px', backgroundColor: '#3498db', color: '#fff' }}>
+      <div style={{ fontSize: '24px', fontWeight: 'bold' }}>My App</div>
+      <nav style={{ display: 'flex', gap: '20px' }}>
+        <a href='#'>Home</a>
+        <a href='#'>About</a>
+        <a href='#'>Contact</a>
+      </nav>
     </header>
   );
 };
