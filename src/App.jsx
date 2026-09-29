@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import LoadingComponent from './components/LoadingComponent';
-import Header from './components/Header';
+import React from 'react';
+import SearchComponent from './components/SearchComponent';
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading delay
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
+  const handleSearch = (query) => {
+    console.log('Search query:', query);
+  };
 
   return (
-    <div style={{ fontFamily: 'Arial, sans-serif' }}>
-      <Header />
-      {isLoading ? <LoadingComponent /> : <div style={{ padding: '20px' }}>Welcome to the Homepage!</div>}
+    <div className='app'>
+      <header className='app-header'>
+        <h1>Welcome to My Application</h1>
+      </header>
+      <main className='app-main'>
+        <SearchComponent onSearch={handleSearch} />
+      </main>
     </div>
   );
 };
