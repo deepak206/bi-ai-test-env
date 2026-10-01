@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import LoadingComponent from './components/LoadingComponent';
-import Header from './components/Header';
+import React from 'react';
+import Sidebar from './components/Sidebar.jsx';
 
-const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading delay
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
-
+function App() {
   return (
-    <div style={{ fontFamily: 'Arial, sans-serif' }}>
-      <Header />
-      {isLoading ? <LoadingComponent /> : <div style={{ padding: '20px' }}>Welcome to the Homepage!</div>}
+    <div className="App">
+      <Sidebar />
+      <div className="content">
+        {/* Main content goes here */}
+      </div>
     </div>
   );
-};
+}
 
 export default App;
